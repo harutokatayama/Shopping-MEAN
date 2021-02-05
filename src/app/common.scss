@@ -1,0 +1,30 @@
+@mixin theme-color-font() {
+    color: #db1e1e;
+}
+
+@mixin theme-color-background() {
+    background-color: #db1e1e;
+}
+
+@mixin background-color-white() {
+    background-color: white;
+}
+
+@mixin font-color-white() {
+    color: white;
+}
+
+@mixin font-family-times() {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@mixin make-content-centered() {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin lined-buttons-margin() {
+    margin-right: 5px;
+    margin-left: 5px;
+}

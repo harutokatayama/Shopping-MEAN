@@ -1,0 +1,7 @@
+@import '../../../common';
+
+.container {
+    @include font-family-times();
+    text-align: center;
+    font-weight: bolder;
+}

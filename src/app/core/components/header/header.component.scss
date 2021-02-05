@@ -1,0 +1,39 @@
+@import '../../../common';
+
+mat-toolbar {
+    .spacer {
+        flex: 1 1 auto;
+    }
+    
+    .mat-icon-button {
+        outline: none !important;
+    }
+}
+
+.header {
+    @include background-color-white();
+    @include font-family-times();
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    .flag-icon-container {
+        img {
+            margin-left: 2px;
+            margin-right: 2px;
+            cursor: pointer;
+        }
+    }
+}
+
+.sub-header {
+    height: 40px;
+    @include theme-color-background();
+    @include font-family-times();
+}
+
+.sub-header_breadcrumb {
+    @include font-family-times();
+    height: 30px;
+    background-color: whitesmoke;
+}

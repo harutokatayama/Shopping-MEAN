@@ -1,0 +1,102 @@
+@import '../../../common';
+
+mat-toolbar {
+    @include background-color-white();
+}
+
+.sub-footer_contact {
+    height: 100%;
+    @include background-color-white();
+    .contact-Us-container {
+        @include make-content-centered();
+        text-align: center;
+        .contact-us-desc {
+            @include theme-color-font();
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .email-us-desc {
+            @include theme-color-font();
+            @include font-family-times();
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .phone-us-desc {
+            @include font-family-times();
+            font-size: 16px;
+        }
+    }
+    .contact-button-container {
+        @include make-content-centered();
+        @include theme-color-font();
+        margin-top: 30px;
+        margin-bottom: 40px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .contact-button {
+            @include lined-buttons-margin();
+            @include font-family-times();
+            background-color: #EEEEEE;
+            width: 108px;
+            outline: none;
+            margin-top: 20px;
+        }
+    }
+    .contact-icon-desc-container {
+        @include make-content-centered();
+        .contact-icon-desc {
+            @include theme-color-font();
+            @include font-family-times();
+            text-align: center;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+    }
+    .contact-icon-container {
+        @include make-content-centered();
+        text-align: center;
+        margin-top: 20px;
+        .SNS-icon {
+            @include lined-buttons-margin();
+            width: 53px;
+            height: 53px;
+            cursor: pointer;
+        }
+    }
+}
+
+.sub-footer {
+    @include background-color-white();
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .credit-icon-container {
+        @include make-content-centered();
+        .credit-icon-nomargin {
+            @include lined-buttons-margin();
+            width: 80px;
+            height: 50px;
+        }
+        .credit-icon {
+            @include lined-buttons-margin();
+            width: 80px;
+            height: 80px;
+        }
+        .credit-icon-nobackground {
+            @include lined-buttons-margin();
+            width: 80px;
+            height: 90px;
+        }
+    }
+}
+
+.footer {
+    @include make-content-centered();
+    @include theme-color-background();
+    @include font-color-white();
+    @include font-family-times();
+    height: 100%;
+    font-size: 12px;
+    text-align: center;
+}
