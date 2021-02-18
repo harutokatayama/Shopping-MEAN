@@ -1,0 +1,16 @@
+<mat-toolbar>
+    <mat-toolbar-row class="admdin-header">
+        <ul class="header-admin">
+            <li>
+                <a mat-button routerLink="/admin/products">Admin Products</a>
+            </li>
+            <span class="spacer"></span>
+            <li>
+                <a mat-button routerLink="/admin/login">Login</a>
+            </li>
+            <li>
+                <button mat-button (click)="onLogout()">Logout</button>
+            </li>
+        </ul>
+    </mat-toolbar-row>
+</mat-toolbar>

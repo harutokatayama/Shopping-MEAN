@@ -1,0 +1,23 @@
+@import '../../../../common';
+
+.admdin-header {
+    background: #dd47dd;
+    .header-admin {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        width: 100vw;
+        .spacer {
+            flex: 1 1 auto;
+        }
+        li {
+            a,
+            button {
+                @include font-family-times();
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}

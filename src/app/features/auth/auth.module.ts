@@ -2,20 +2,24 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
-import { AuthComponent } from "./components/auth/auth.component";
+import { LoginComponent } from "./components/login/login.component";
+
+import { SharedModule } from "src/app/shared/shared.module";
+import { FormsModule } from "@angular/forms";
+import { SignupComponent } from './components/signup/signup.component';
 
 //Angular Material
 import { MatButtonModule } from '@angular/material/button';
-import { SharedModule } from "src/app/shared/shared.module";
-import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
-        AuthComponent
+        LoginComponent,
+        SignupComponent,
     ],
     imports: [
         RouterModule.forChild([
-            { path: '', component: AuthComponent }
+            { path: 'login', component: LoginComponent },
+            { path: 'signup', component: SignupComponent }
         ]),
         CommonModule,
         FormsModule,

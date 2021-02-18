@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class AuthComponent implements OnInit {
+export class SignupComponent implements OnInit {
   isLoadingMode = true;
   isLoading = false;
   constructor() { }
