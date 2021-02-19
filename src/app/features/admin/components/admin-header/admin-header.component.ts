@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { AdminService } from '../../services/admin.service';
 
 @Component({
@@ -7,7 +8,9 @@ import { AdminService } from '../../services/admin.service';
   templateUrl: './admin-header.component.html',
   styleUrls: ['./admin-header.component.scss']
 })
-export class AdminHeaderComponent implements OnInit {
+export class AdminHeaderComponent implements OnInit, OnDestroy {
+  adminUserIsAuthenticated = false;
+  private authListenerSub: Subscription;
 
   constructor(
     private router: Router,
@@ -19,6 +22,10 @@ export class AdminHeaderComponent implements OnInit {
 
   onLogout() {
     this.adminService.adminLogout();
+  }
+
+  ngOnDestroy() {
+    this.authListenerSub.unsubscribe();
   }
 
 }

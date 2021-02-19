@@ -1,0 +1,37 @@
+<!-- <mat-spinner *ngIf="isLoading"></mat-spinner> -->
+<form class="admin-users-form">
+    <mat-form-field>
+        <mat-label><mat-icon>search</mat-icon>Email</mat-label>
+        <input matInput>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label><mat-icon>search</mat-icon>Password</mat-label>
+        <input matInput>
+    </mat-form-field>
+</form>
+
+<mat-accordion class="admin-users-headers-align">
+
+    <mat-expansion-panel *ngFor="let user of users; index as i" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Personal data
+            </mat-panel-title>
+            <mat-panel-description>
+                Type your name and age
+                <mat-icon>account_circle</mat-icon>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <mat-action-row>
+            <button mat-button color="warn" (click)="onDelete()">Delete</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+  
+</mat-accordion>
+
+<mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

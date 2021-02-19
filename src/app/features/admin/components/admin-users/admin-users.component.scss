@@ -1,0 +1,27 @@
+.admin-users-form {
+    display: flex;
+    justify-content: center;
+}
+
+.admin-users-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-expansion-panel {
+    width: 80%;
+    margin: auto;
+    mat-action-row {
+        button {
+            outline: none;
+        }
+    }
+}
+
+mat-paginator {
+    display: flex;
+    justify-content: center;
+    ::ng-deep button {
+        outline: none;
+    }
+}

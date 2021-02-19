@@ -27,7 +27,7 @@ export class AdminLoginComponent implements OnInit {
 
     this.isLoading = true;
 
-    this.adminService.adminLogin();
+    this.adminService.adminLogin(email, password);
 
     setTimeout(() => {
       this.isLoading = false;

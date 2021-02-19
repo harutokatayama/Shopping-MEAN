@@ -12,4 +12,8 @@ export class AdminEditProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onDelete() {
+    
+  }
+
 }

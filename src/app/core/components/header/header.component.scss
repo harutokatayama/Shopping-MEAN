@@ -1,6 +1,47 @@
 @import '../../../common';
 
 mat-toolbar {
+    .header {
+        @include background-color-white();
+        @include font-family-times();
+        height: 75px;
+        .header-auth {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            a,
+            button {
+                @include font-family-times();
+                color: black;
+                text-decoration: none;
+            }
+        }
+        .header-flag {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            img {
+                margin-right: 3px;
+                margin-left: 3px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .sub-header {
+        @include theme-color-background();
+        @include font-family-times();
+        height: 46px;
+    }
+
+    .sub-header_breadcrumb {
+        @include font-family-times();
+        height: 35px;
+        background-color: #EEEEEE;
+    }
+
     .spacer {
         flex: 1 1 auto;
     }
@@ -8,44 +49,4 @@ mat-toolbar {
     .mat-icon-button {
         outline: none !important;
     }
-}
-
-.header {
-    @include background-color-white();
-    @include font-family-times();
-    .header-auth {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        a,
-        button {
-            @include font-family-times();
-            color: black;
-            text-decoration: none;
-        }
-    }
-    .header-flag {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        img {
-            margin-right: 3px;
-            margin-left: 3px;
-            cursor: pointer;
-        }
-    }
-}
-
-.sub-header {
-    height: 40px;
-    @include theme-color-background();
-    @include font-family-times();
-}
-
-.sub-header_breadcrumb {
-    @include font-family-times();
-    height: 30px;
-    background-color: whitesmoke;
 }

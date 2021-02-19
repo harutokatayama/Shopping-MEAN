@@ -7,10 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  login = true;
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.router.navigate(['/admin/login']);
+    if (!this.login) {
+      this.router.navigate(['/admin/login']);
+    }
   }
 
 }

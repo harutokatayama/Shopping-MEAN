@@ -1,1 +1,22 @@
-<p>admin-edit-products works!</p>
+<div class="admin-products-container">
+    <mat-card class="admin-product-container">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>ID: Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a product">
+        <mat-card-content>
+            <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <a class="back-button" mat-stroked-button routerLink="/admin/products">BACK</a>
+            <button mat-button color="primary">UPDATE</button>
+            <button mat-button color="warn" (click)="onDelete()">DELETE</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
