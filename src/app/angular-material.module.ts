@@ -7,6 +7,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   exports: [
@@ -15,7 +19,11 @@ import { MatDividerModule } from '@angular/material/divider';
     MatIconModule,
     MatSidenavModule,
     MatBadgeModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule,
+    MatInputModule,
+    MatCardModule,
+    MatPaginatorModule
   ]
 })
 export class AngularMaterialModule {

@@ -6,7 +6,7 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./features/products/products.model').then(m => m.ProductsModule)
+    loadChildren: () => import('./features/products/products.module').then(m => m.ProductsModule)
   },
   {
     path: 'auth',
