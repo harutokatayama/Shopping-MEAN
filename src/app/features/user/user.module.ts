@@ -14,7 +14,7 @@ import { UserRoutingModule } from "./user-routing.model";
         RouterModule,
         ReactiveFormsModule,
         UserRoutingModule,
-        // SharedModule
+        SharedModule
     ]
 })
 export class UserModule {

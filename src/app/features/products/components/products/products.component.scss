@@ -1,6 +1,31 @@
-#carouselExampleIndicators {
-    max-height: 400px;
-    img {
-        max-height: 400px;
+.products-container {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    .product-container {
+        max-width: 300px;
+        margin-top: 1rem;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        cursor: pointer;
+        mat-card-actions {
+            display: flex;
+            justify-content: center;
+            button {
+                outline: none;
+            }
+        }
+    }
+}
+
+mat-paginator {
+    display: flex;
+    justify-content: center;
+    ::ng-deep button {
+        outline: none;
     }
 }
