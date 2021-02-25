@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -10,7 +10,7 @@ import { AdminProductsService } from '../../services/admin-products.service';
   templateUrl: './admin-post-products.component.html',
   styleUrls: ['./admin-post-products.component.scss']
 })
-export class AdminPostProductsComponent implements OnInit {
+export class AdminPostProductsComponent implements OnInit, OnDestroy {
   enteredContent = '';
   isLoading = false;
   product: Product;
@@ -53,9 +53,9 @@ export class AdminPostProductsComponent implements OnInit {
           this.product = {
             id: productData._id,
             title: productData.title,
-            description: productData.description,
             price: productData.price,
             imagePath: productData.imagePath,
+            description: productData.description,
             quantity: productData.quantity,
             heavy: productData.heavy,
             category: productData.category,
@@ -65,8 +65,9 @@ export class AdminPostProductsComponent implements OnInit {
           };
           this.form.setValue({
             title: this.product.title,
-            description: this.product.description,
+            price: this.product.price,
             imagePath: this.product.imagePath,
+            description: this.product.description,
             quantity: this.product.quantity,
             heavy: this.product.heavy,
             category: this.product.category,
@@ -87,7 +88,44 @@ export class AdminPostProductsComponent implements OnInit {
   }
 
   onSaveProduct() {
+    if (this.form.invalid) {
+      return;
+    }
+    this.isLoading = true;
+    if (this.mode === 'create') {
+      this.adminProductService.addProduct(
+        this.form.value.title,
+        this.form.value.price,
+        this.form.value.image,
+        this.form.value.description,
+        this.form.value.quantity,
+        this.form.value.heavy,
+        this.form.value.category,
+        this.form.value.country,
+        this.form.value.height,
+        this.form.value.width
+      );
+    } else {
+      this.adminProductService.updateProduct(
+        this.productId,
+        this.form.value.title,
+        this.form.value.price,
+        this.form.value.image,
+        this.form.value.description,
+        this.form.value.quantity,
+        this.form.value.heavy,
+        this.form.value.category,
+        this.form.value.country,
+        this.form.value.height,
+        this.form.value.width
+      );
+    }
 
+    this.form.reset();
+  }
+
+  ngOnDestroy() {
+    this.authStatusSub.unsubscribe();
   }
 
 }

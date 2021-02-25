@@ -1,11 +1,30 @@
+<mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <button mat-button mat-icon-button class="mat-icon-button" (click)="drawer.toggle();">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <app-sidenav></app-sidenav>
+</mat-drawer>
+
 <mat-toolbar>
 
     <mat-toolbar-row class="header">
-        <button mat-icon-button class="mat-icon-button">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <a routerLink="/">Sample</a>
+        <mat-drawer-container class="example-container" autosize>
+            <div class="example-sidenav-content">
+              <button mat-button mat-icon-button class="mat-icon-button" (click)="drawer.toggle();">
+                <mat-icon>menu</mat-icon>
+              </button>
+            </div>
+        </mat-drawer-container>
+
+        <a routerLink="/">
+            <img src="assets/logo.png" alt="logo">
+        </a>
         <span class="spacer"></span>
+
         <ul class="header-auth">
             <li *ngIf="!userIsAuthenticated">
                 <a mat-button routerLink="/auth/login">Login</a>
@@ -17,9 +36,7 @@
                 <button mat-button (click)="onLogout()">Logout</button>
             </li>
         </ul>
-        <button mat-icon-button class="mat-icon-button">
-            <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
-        </button>
+
         <ul class="header-flag">
             <li>
                 <img src="assets/United-States-Flag-icon.png" alt="English">
@@ -31,13 +48,56 @@
     </mat-toolbar-row>
 
     <mat-toolbar-row class="sub-header">
-        <span>Second Line</span>
+
+        <button mat-button [matMenuTriggerFor]="afterMenu">Pipes</button>
+        <mat-menu #afterMenu="matMenu" xPosition="after">
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>New Pipes</button>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Estate Pipes</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Starter Kits</button>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Pipe Accessories</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="afterMenu2">Cigars</button>
+        <mat-menu #afterMenu2="matMenu" xPosition="after">
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Cigars</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Recently Added</button>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Cigar Best Sellers</button>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Cigar Accessories</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="afterMenu3">Billiards</button>
+        <mat-menu #afterMenu3="matMenu" xPosition="after">
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Cues</button>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Tables</button>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Balls</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Billiards Accessories</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="afterMenu6">Chess</button>
+        <mat-menu #afterMenu6="matMenu" xPosition="after">
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Chess Sets</button>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Chess Pieces</button>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Chess Boards</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Chess Accessories</button>
+            <button mat-menu-item style="outline: none;"><mat-icon>chevron_right</mat-icon>Books</button>
+        </mat-menu>
+
         <span class="spacer"></span>
+
         <button mat-icon-button class="mat-icon-button">
             <mat-icon>star_rate</mat-icon>
         </button>|
+
         <button mat-icon-button class="mat-icon-button" routerLink="/user">
             <mat-icon>account_circle</mat-icon>
+        </button> |
+
+        <button mat-icon-button class="mat-icon-button">
+            <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
         </button>
     </mat-toolbar-row>
 

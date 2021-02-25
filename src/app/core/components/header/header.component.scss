@@ -1,10 +1,26 @@
 @import '../../../common';
 
+mat-drawer {
+    @include background-color-white();
+    @include font-family-times();
+    width: 30%;
+    mat-toolbar {
+        @include background-color-white();
+        height: 75px;
+        mat-toolbar-row {
+            height: 100%
+        }
+    }
+}
+
 mat-toolbar {
     .header {
         @include background-color-white();
         @include font-family-times();
         height: 75px;
+        mat-drawer-container {
+            @include background-color-white();
+        }
         .header-auth {
             list-style: none;
             padding: 0;
@@ -12,8 +28,8 @@ mat-toolbar {
             display: flex;
             a,
             button {
+                @include theme-color-font();
                 @include font-family-times();
-                color: black;
                 text-decoration: none;
             }
         }
@@ -33,10 +49,19 @@ mat-toolbar {
     .sub-header {
         @include theme-color-background();
         @include font-family-times();
+        color: #E9F1FF;
         height: 46px;
+        button {
+            @include font-family-times();
+            outline: none;
+        }
+        mat-menu {
+            @include font-family-times();
+        }
     }
 
     .sub-header_breadcrumb {
+        @include theme-color-font();
         @include font-family-times();
         height: 35px;
         background-color: #EEEEEE;
@@ -49,4 +74,8 @@ mat-toolbar {
     .mat-icon-button {
         outline: none !important;
     }
+}
+
+::ng-deep .mat-menu-panel {
+    min-width: 200px !important;
 }

@@ -29,10 +29,6 @@ export class AdminLoginComponent implements OnInit {
 
     this.adminService.adminLogin(email, password);
 
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 2500);
-
     form.reset();
     this.router.navigate(['/admin/products']);
   }
