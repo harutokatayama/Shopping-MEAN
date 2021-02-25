@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 import { HeaderComponent } from './core/components/header/header.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { AngularMaterialModule } from './angular-material.module';
+import { SidenavComponent } from './core/components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,14 @@ import { AngularMaterialModule } from './angular-material.module';
     HeaderComponent,
     PageNotFoundComponent,
     FooterComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
