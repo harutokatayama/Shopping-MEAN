@@ -10,6 +10,8 @@ import { AdminProductsService } from '../../services/admin-products.service';
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
   products = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,];
+  productCode = 'ZLFfW5Vh2Y28NQRu';
+  isLoadingMode = true;
   isLoading = false;
   totalProducts = 10;
   productsPerPage = 2;
@@ -17,15 +19,17 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   pageSizeOptions = [1, 2, 5, 10];
   userIsAuthenticated = false;
   userId: string;
-  productCode = 'ZLFfW5Vh2Y28NQRu';
   private productsSub: Subscription;
   private authStatusSub: Subscription;
 
   constructor(private adminProductsService: AdminProductsService) { }
-
+  
   ngOnInit(): void {
     this.isLoading = true;
-    this.adminProductsService.getProducts(this.productsPerPage, this.currentPage);
+    // this.adminProductsService.getProducts(this.productsPerPage, this.currentPage);
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 0)
   }
 
   onDelete(postId: string) {

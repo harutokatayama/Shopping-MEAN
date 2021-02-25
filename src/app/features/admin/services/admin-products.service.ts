@@ -30,9 +30,9 @@ export class AdminProductsService {
                           return {
                               id: product._id,
                               title: product.title,
-                              description: product.description,
-                              imagePath: product.imagePath,
                               price: product.price,
+                              imagePath: product.imagePath,
+                              description: product.description,
                               quantity: product.quantity,
                               heavy: product.heavy,
                               category: product.category,
@@ -63,12 +63,12 @@ export class AdminProductsService {
             _id: string;
             title: string;
             price: number;
-            description: string;
-            category: string;
-            country: string;
             imagePath: string;
+            description: string;
             quantity: number;
             heavy: number;
+            category: string;
+            country: string;
             height: number;
             width: number;
         }>('http://localhost:3000/api/products/' + id);
@@ -77,22 +77,24 @@ export class AdminProductsService {
     addProduct(
         title: string,
         price: string,
+        image: File,
         description: string,
+        quantity: string,
+        heavy: string,
         category: string,
         country: string,
-        image: File,
-        quantity: string,
         height: string,
         width: string,
     ) {
         const postData = new FormData();
         postData.append('title', title);
         postData.append('price', price);
+        postData.append('image', image);
         postData.append('description', description);
+        postData.append('quantity', quantity);
+        postData.append('heavy', heavy);
         postData.append('category', category);
         postData.append('country', country);
-        postData.append('image', image);
-        postData.append('quantity', quantity);
         postData.append('height', height);
         postData.append('width', width);
         this.http
@@ -109,12 +111,12 @@ export class AdminProductsService {
         id: string,
         title: string,
         price: string,
-        description: string,
-        category: string,
-        country: string,
         image: File | string,
+        description: string,
         quantity: string,
         heavy: string,
+        category: string,
+        country: string,
         height: string,
         width: string,
     ) {
@@ -123,26 +125,26 @@ export class AdminProductsService {
             productData = new FormData();
             productData.append('id', id);
             productData.append('title', title);
-            productData.append('description', description);
-            productData.append('image', image, title);
             productData.append('price', price);
-            productData.append('category', category);
-            productData.append('country', country);
+            productData.append('image', image, title);
+            productData.append('description', description);
             productData.append('quantity', quantity);
             productData.append('heavy', heavy);
+            productData.append('category', category);
+            productData.append('country', country);
             productData.append('height', height);
             productData.append('width', width);
         } else {
             productData = {
                 id: id,
                 title: title,
-                description: description,
-                imagePath: image,
                 price: +price,
-                category: category,
-                country: country,
+                imagePath: image,
+                description: description,
                 quantity: +quantity,
                 heavy: +heavy,
+                category: category,
+                country: country,
                 height: +height,
                 width: +width
             };

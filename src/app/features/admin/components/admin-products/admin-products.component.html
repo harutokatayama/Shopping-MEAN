@@ -1,5 +1,4 @@
-<!-- <mat-spinner *ngIf="isLoading"></mat-spinner> -->
-<form class="admin-users-form">
+<form class="admin-users-form" *ngIf="!isLoading">
     <mat-form-field>
         <mat-label><mat-icon>search</mat-icon>Name</mat-label>
         <input matInput>
@@ -11,7 +10,13 @@
     </mat-form-field>
 </form>
 
-<div class="admin-products-container">
+<mat-paginator *ngIf="!isLoading" [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
+
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div class="admin-products-container" *ngIf="!isLoading">
     <mat-card class="admin-product-container" *ngFor="let product of products">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
@@ -31,7 +36,7 @@
     </mat-card>
 </div>
 
-<mat-paginator [length]="100"
+<mat-paginator *ngIf="!isLoading" [length]="100"
               [pageSize]="10"
               [pageSizeOptions]="[5, 10, 25, 100]">
 </mat-paginator>
