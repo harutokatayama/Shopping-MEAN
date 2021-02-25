@@ -1,16 +1,21 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { AngularMaterialModule } from "../angular-material.module";
+import { CarouselComponent } from "./components/carousel/carousel.component";
 import { LoadingSpinnerComponent } from "./components/loading-spinner/loading-spinner.component";
 
 @NgModule({
     declarations: [
-        LoadingSpinnerComponent
+        LoadingSpinnerComponent,
+        CarouselComponent,
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        AngularMaterialModule
     ],
     exports: [
-        LoadingSpinnerComponent
+        LoadingSpinnerComponent,
+        CarouselComponent,
     ],
     // entryComponents: [
 
