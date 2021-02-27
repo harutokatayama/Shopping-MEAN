@@ -1,0 +1,31 @@
+@import '../../../../common';
+
+.parent-mat-card {
+    .profile-container {
+        text-align: center;
+        .avator-img {
+            @include crop-rectangle();
+            max-height: 340px;
+            max-width: 340px;
+            border: solid 1px;
+        }
+        .update-button {
+            @include font-family-times();
+            @include theme-color-font();
+            outline: none;
+        }
+    }
+    .detail-container {
+        text-align: center;
+        mat-card-content {
+            mat-card-title {
+                @include font-family-times();
+            }
+            mat-card-subtitle {
+                a {
+                    @include font-family-times();
+                }
+            }
+        }
+    }
+}

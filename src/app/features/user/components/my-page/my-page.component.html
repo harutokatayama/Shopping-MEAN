@@ -1,1 +1,32 @@
-<p>my-page works!</p>
+<mat-card class="parent-mat-card">
+    <mat-card-content class="profile-container">
+        <img mat-card-image class="avator-img" src="/assets/whitewolf.jpg">
+        <mat-card-subtitle>Haruto Katayama</mat-card-subtitle>
+        <mat-card-subtitle>xxxxxx@xxx.xx.xx</mat-card-subtitle>
+        <button mat-button routerLink="/user/enter-info" class="update-button">Update Account</button>
+    </mat-card-content>
+
+    <mat-card-content class="detail-container">
+        <mat-card>
+            <mat-card-title>Orders</mat-card-title>
+            <mat-card-subtitle>
+                <a routerLink="/">View All Orders</a>
+            </mat-card-subtitle>
+        </mat-card>
+
+        <mat-card>
+            <mat-card-title>WishLists</mat-card-title>
+            <mat-card-subtitle>
+                <a routerLink="/">View All WishLists</a>
+            </mat-card-subtitle>
+        </mat-card>
+
+        <mat-card>
+            <mat-card-title>Reviews</mat-card-title>
+            <mat-card-subtitle>
+                <a routerLink="/">View All Reviews</a>
+            </mat-card-subtitle>
+        </mat-card>
+
+    </mat-card-content>
+</mat-card>
