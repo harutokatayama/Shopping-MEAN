@@ -5,7 +5,7 @@ export interface Product {
   description: string;
   imagePath: string;
   quantity: number;
-  heavy: number;
+  weight: number;
   category: string;
   country: string;
   height: number;

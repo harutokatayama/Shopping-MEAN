@@ -34,7 +34,7 @@ export class AdminProductsService {
                               imagePath: product.imagePath,
                               description: product.description,
                               quantity: product.quantity,
-                              heavy: product.heavy,
+                              weight: product.weight,
                               category: product.category,
                               country: product.country,
                               height: product.height,
@@ -66,7 +66,7 @@ export class AdminProductsService {
             imagePath: string;
             description: string;
             quantity: number;
-            heavy: number;
+            weight: number;
             category: string;
             country: string;
             height: number;
@@ -80,7 +80,7 @@ export class AdminProductsService {
         image: File,
         description: string,
         quantity: string,
-        heavy: string,
+        weight: string,
         category: string,
         country: string,
         height: string,
@@ -92,7 +92,7 @@ export class AdminProductsService {
         postData.append('image', image);
         postData.append('description', description);
         postData.append('quantity', quantity);
-        postData.append('heavy', heavy);
+        postData.append('weight', weight);
         postData.append('category', category);
         postData.append('country', country);
         postData.append('height', height);
@@ -114,7 +114,7 @@ export class AdminProductsService {
         image: File | string,
         description: string,
         quantity: string,
-        heavy: string,
+        weight: string,
         category: string,
         country: string,
         height: string,
@@ -129,7 +129,7 @@ export class AdminProductsService {
             productData.append('image', image, title);
             productData.append('description', description);
             productData.append('quantity', quantity);
-            productData.append('heavy', heavy);
+            productData.append('weight', weight);
             productData.append('category', category);
             productData.append('country', country);
             productData.append('height', height);
@@ -142,7 +142,7 @@ export class AdminProductsService {
                 imagePath: image,
                 description: description,
                 quantity: +quantity,
-                heavy: +heavy,
+                weight: +weight,
                 category: category,
                 country: country,
                 height: +height,
