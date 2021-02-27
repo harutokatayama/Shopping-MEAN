@@ -1,0 +1,42 @@
+<mat-horizontal-stepper>
+    <mat-step label="Step 1" state="create" [stepControl]="firstFormGroup" errorMessage="Name is required.">
+      <p>Put down your phones.</p>
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button [disabled]="firstFormGroup.invalid" mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step label="Step 2" [stepControl]="secondFormGroup" errorMessage="Address is required.">
+      <p>Socialize with each other.</p>
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button  [disabled]="secondFormGroup.invalid" mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step label="Step 3" [stepControl]="secondFormGroup" errorMessage="Please enter all required information.">
+      <p>You're welcome.</p>
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Fill out your Payment Info</ng-template>
+        <button [disabled]="firstFormGroup.invalid || secondFormGroup.invalid">save</button>
+      </form>
+    </mat-step>
+  
+    <!-- Icon overrides. -->
+    <ng-template matStepperIcon="create">
+      <mat-icon>create</mat-icon>
+    </ng-template>
+</mat-horizontal-stepper>
