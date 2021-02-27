@@ -1,30 +1,66 @@
 @mixin theme-color-font() {
-    color: #AA1B14;
+    color: #AA1B14 !important;
 }
 
 @mixin theme-color-background() {
-    background-color: #AA1B14;
+    background-color: #AA1B14 !important;
+}
+
+@mixin subheaderFontColor() {
+    color: #E9F1FF !important;
+}
+
+@mixin breadcrumbsBackgroundColor() {
+    background-color: #EEEEEE !important;
 }
 
 @mixin background-color-white() {
-    background-color: white;
+    background-color: white !important;
 }
 
 @mixin font-color-white() {
-    color: white;
+    color: white !important;
 }
 
 @mixin font-family-times() {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif !important;
 }
 
 @mixin make-content-centered() {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
 }
 
 @mixin lined-buttons-margin() {
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 5px !important;
+    margin-left: 5px !important;
+}
+
+@mixin crop-rectangle() {
+    background-position: center !important;
+    background-size:cover !important;
+    border-radius: 50% !important;
+}
+
+@mixin displayFlex() {
+    display: -webkit-flex !important;
+    display: -moz-flex !important;
+    display: -ms-flex !important;
+    display: -o-flex !important;
+    display: flex !important;
+}
+
+@mixin displayFlexCenter() {
+    display: -webkit-flex !important;
+    display: -moz-flex !important;
+    display: -ms-flex !important;
+    display: -o-flex !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+@mixin paddingMarginToZero() {
+    padding: 0 !important;
+    margin: 0 !important;
 }
