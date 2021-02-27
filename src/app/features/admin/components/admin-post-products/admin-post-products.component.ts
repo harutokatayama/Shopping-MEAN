@@ -37,7 +37,7 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
       image: new FormControl(null, { validators: [Validators.required] }),
       description: new FormControl(null, { validators: [Validators.required] }),
       quantity: new FormControl(null, { validators: [Validators.required] }),
-      heavy: new FormControl(null, { validators: [Validators.required] }),
+      weight: new FormControl(null, { validators: [Validators.required] }),
       category: new FormControl(null, { validators: [Validators.required] }),
       country: new FormControl(null, { validators: [Validators.required] }),
       height: new FormControl(null, { validators: [Validators.required] }),
@@ -57,7 +57,7 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
             imagePath: productData.imagePath,
             description: productData.description,
             quantity: productData.quantity,
-            heavy: productData.heavy,
+            weight: productData.weight,
             category: productData.category,
             country: productData.country,
             height: productData.height,
@@ -69,7 +69,7 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
             imagePath: this.product.imagePath,
             description: this.product.description,
             quantity: this.product.quantity,
-            heavy: this.product.heavy,
+            weight: this.product.weight,
             category: this.product.category,
             country: this.product.country,
             height: this.product.height,
@@ -99,7 +99,7 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
         this.form.value.image,
         this.form.value.description,
         this.form.value.quantity,
-        this.form.value.heavy,
+        this.form.value.weight,
         this.form.value.category,
         this.form.value.country,
         this.form.value.height,
@@ -113,7 +113,7 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
         this.form.value.image,
         this.form.value.description,
         this.form.value.quantity,
-        this.form.value.heavy,
+        this.form.value.weight,
         this.form.value.category,
         this.form.value.country,
         this.form.value.height,
@@ -122,6 +122,10 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
     }
 
     this.form.reset();
+  }
+
+  clearFormField(element: FormControl) {
+    element.setValue(null);
   }
 
   ngOnDestroy() {

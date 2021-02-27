@@ -11,7 +11,10 @@
         formControlName="title"
         placeholder="Title"
       >
-      <!-- <mat-error *ngIf="form.get('title').invalid">Please enter a post title.</mat-error> -->
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearFormField(form.get('title'))">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-error *ngIf="form.get('title').invalid">Please enter a product title.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -21,7 +24,10 @@
         formControlName="price"
         placeholder="Price"
       >
-      <!-- <mat-error *ngIf="form.get('price').invalid">Please enter a post title.</mat-error> -->
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearFormField(form.get('price'))">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-error *ngIf="form.get('price').invalid">Please enter a product price.</mat-error>
     </mat-form-field>
 
     <div>
@@ -39,7 +45,10 @@
         formControlName="description"
         placeholder="Description"
       ></textarea>
-      <!-- <mat-error *ngIf="form.get('description').invalid">Please enter a post content.</mat-error> -->
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearFormField(form.get('description'))">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-error *ngIf="form.get('description').invalid">Please enter a product description.</mat-error>
     </mat-form-field>
 
     <div class="mat-form-field-container">
@@ -50,17 +59,23 @@
           formControlName="quantity"
           placeholder="Quantity"
         >
-        <!-- <mat-error *ngIf="form.get('quantity').invalid">Please enter a post title.</mat-error> -->
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearFormField(form.get('quantity'))">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="form.get('quantity').invalid">Please enter a product quantity.</mat-error>
       </mat-form-field>
   
       <mat-form-field>
         <input
           matInput
           type="number"
-          formControlName="heavy"
-          placeholder="Heavy"
+          formControlName="weight"
+          placeholder="weight"
         >
-        <!-- <mat-error *ngIf="form.get('heavy').invalid">Please enter a post title.</mat-error> -->
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearFormField(form.get('weight'))">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="form.get('weight').invalid">Please enter a product weight.</mat-error>
       </mat-form-field>
     </div>
 
@@ -72,7 +87,10 @@
           formControlName="category"
           placeholder="Category"
         >
-        <!-- <mat-error *ngIf="form.get('category').invalid">Please enter a post title.</mat-error> -->
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearFormField(form.get('category'))">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="form.get('category').invalid">Please enter a product category.</mat-error>
       </mat-form-field>
   
       <mat-form-field>
@@ -82,7 +100,10 @@
           formControlName="country"
           placeholder="Country"
         >
-        <!-- <mat-error *ngIf="form.get('country').invalid">Please enter a post title.</mat-error> -->
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearFormField(form.get('country'))">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="form.get('country').invalid">Please enter a product country.</mat-error>
       </mat-form-field>
     </div>
 
@@ -94,7 +115,10 @@
           formControlName="height"
           placeholder="Height"
         >
-        <!-- <mat-error *ngIf="form.get('height').invalid">Please enter a post title.</mat-error> -->
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearFormField(form.get('height'))">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="form.get('height').invalid">Please enter a product height.</mat-error>
       </mat-form-field>
   
       <mat-form-field>
@@ -104,7 +128,10 @@
           formControlName="width"
           placeholder="Width"
         >
-        <!-- <mat-error *ngIf="form.get('width').invalid">Please enter a post title.</mat-error> -->
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearFormField(form.get('width'))">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="form.get('width').invalid">Please enter a product width.</mat-error>
       </mat-form-field>
     </div>
 
