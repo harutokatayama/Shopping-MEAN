@@ -1,12 +1,13 @@
+@import './common';
+
 mat-card {
-    max-width: 1140px;
+    max-width: 1000px;
     margin: auto;
     padding: 0 !important;
     .container {
+        @include paddingMarginToZero();
         max-width: 100%;
         min-height: 100vh;
         overflow: hidden;
-        padding: 0;
-        margin: 0;
     }
 }

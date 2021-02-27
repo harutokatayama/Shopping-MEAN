@@ -1,6 +1,7 @@
+@import '../../../../common';
+
 .admin-users-form {
-    display: flex;
-    justify-content: center;
+    @include displayFlexCenter();
 }
 
 .admin-users-headers-align .mat-expansion-panel-header-description {
@@ -19,8 +20,7 @@ mat-expansion-panel {
 }
 
 mat-paginator {
-    display: flex;
-    justify-content: center;
+    @include displayFlexCenter();
     ::ng-deep button {
         outline: none;
     }

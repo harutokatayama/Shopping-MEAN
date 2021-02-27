@@ -22,10 +22,9 @@ mat-toolbar {
             @include background-color-white();
         }
         .header-auth {
+            @include displayFlex();
+            @include paddingMarginToZero;
             list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
             a,
             button {
                 @include theme-color-font();
@@ -34,10 +33,9 @@ mat-toolbar {
             }
         }
         .header-flag {
+            @include displayFlex();
+            @include paddingMarginToZero();
             list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
             img {
                 margin-right: 3px;
                 margin-left: 3px;
@@ -45,37 +43,47 @@ mat-toolbar {
             }
         }
     }
-
     .sub-header {
         @include theme-color-background();
         @include font-family-times();
-        color: #E9F1FF;
+        @include subheaderFontColor();
         height: 46px;
         button {
             @include font-family-times();
             outline: none;
         }
-        mat-menu {
-            @include font-family-times();
-        }
     }
-
     .sub-header_breadcrumb {
         @include theme-color-font();
         @include font-family-times();
+        @include breadcrumbsBackgroundColor();
         height: 35px;
-        background-color: #EEEEEE;
     }
-
     .spacer {
         flex: 1 1 auto;
     }
-    
     .mat-icon-button {
         outline: none !important;
     }
 }
 
 ::ng-deep .mat-menu-panel {
+    @include font-family-times();
     min-width: 200px !important;
+}
+
+::ng-deep .mat-menu-item {
+    @include font-family-times();
+}
+
+.mat-icon-arrow {
+    font-size: 36px;
+    height: 36px;
+    width: 36px;
+    margin-right: 0 !important;
+}
+
+.mat-icon-arrow-sm {
+    position: relative;
+    left: 8px;
 }

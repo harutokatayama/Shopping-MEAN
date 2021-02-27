@@ -1,11 +1,8 @@
+@import '../../../../common';
+
 .admin-products-container {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
+    @include displayFlexCenter();
     flex-flow: row wrap;
-    justify-content: center;
     .admin-product-container {
         max-width: 800px;
         margin-top: 1rem;
@@ -18,8 +15,7 @@
             }
         }
         mat-card-actions {
-            display: flex;
-            justify-content: center;
+            @include displayFlexCenter();
             .back-button {
                 text-decoration: none;
             }
