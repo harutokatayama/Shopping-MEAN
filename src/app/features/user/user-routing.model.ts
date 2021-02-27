@@ -2,9 +2,19 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 import { MyPageComponent } from "./components/my-page/my-page.component";
+import { UserInfoComponent } from "./components/user-info/user-info.component";
+import { EnterUserInfoComponent } from "./components/enter-user-info/enter-user-info.component";
+import { UserComponent } from "./components/user/user.component";
+
 
 const routes: Routes = [
-    { path: '', component: MyPageComponent },
+    { path: '', component: UserComponent ,
+      children: [
+          { path: 'my-page', component: MyPageComponent },
+          { path: 'info', component: UserInfoComponent },
+          { path: 'enter-info', component: EnterUserInfoComponent }
+      ]
+    }
 ];
 
 @NgModule({

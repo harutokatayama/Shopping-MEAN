@@ -25,7 +25,7 @@ export class AdminHeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.authListenerSub.unsubscribe();
+    // this.authListenerSub.unsubscribe();
   }
 
 }

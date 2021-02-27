@@ -11,7 +11,7 @@ export class AdminComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    if (!this.login) {
+    if (this.router.url === '/admin') {
       this.router.navigate(['/admin/login']);
     }
   }

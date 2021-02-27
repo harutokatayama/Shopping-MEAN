@@ -5,15 +5,15 @@ import { AngularMaterialModule } from "src/app/angular-material.module";
 import { SharedModule } from "src/app/shared/shared.module";
 
 import { ProductsComponent } from "./components/products/products.component";
+import { ProductsRoutingModule } from "./products-routing.module";
 
 @NgModule({
     declarations: [
         ProductsComponent
     ],
     imports: [
-        RouterModule.forChild([
-            { path: '', component: ProductsComponent },
-        ]),
+        RouterModule,
+        ProductsRoutingModule,
         CommonModule,
         SharedModule,
         AngularMaterialModule
