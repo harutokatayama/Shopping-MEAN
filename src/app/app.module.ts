@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,7 @@ import { HeaderComponent } from './core/components/header/header.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { SidenavComponent } from './core/components/sidenav/sidenav.component';
+import { AuthInterceptor } from './features/auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { SidenavComponent } from './core/components/sidenav/sidenav.component';
     BrowserAnimationsModule,
     AngularMaterialModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
