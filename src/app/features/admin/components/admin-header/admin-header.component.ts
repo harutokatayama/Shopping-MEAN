@@ -18,6 +18,12 @@ export class AdminHeaderComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    this.adminUserIsAuthenticated = this.adminService.getIsAuth();
+    this.authListenerSub = this.adminService
+      .getAuthenticatedListener()
+      .subscribe(isAuthenticated => {
+        this.adminUserIsAuthenticated = isAuthenticated;
+      });
   }
 
   onLogout() {
@@ -25,7 +31,7 @@ export class AdminHeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // this.authListenerSub.unsubscribe();
+    this.authListenerSub.unsubscribe();
   }
 
 }

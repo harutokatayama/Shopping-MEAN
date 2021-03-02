@@ -13,6 +13,7 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { AdminUsersComponent } from './components/admin-users/admin-users.component';
 import { AdminRoutingModule } from "./admin-routing.module";
 import { AngularMaterialModule } from "src/app/angular-material.module";
+import { AdminSignupComponent } from './components/admin-signup/admin-signup.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { AngularMaterialModule } from "src/app/angular-material.module";
         AdminEditProductsComponent,
         AdminHeaderComponent,
         AdminLoginComponent,
-        AdminUsersComponent
+        AdminUsersComponent,
+        AdminSignupComponent
     ],
     imports: [
         RouterModule,

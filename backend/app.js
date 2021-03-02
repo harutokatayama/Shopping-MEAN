@@ -2,8 +2,10 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const userRoutes = require('./routes/user');
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 
@@ -17,6 +19,7 @@ mongoose.connect('mongodb+srv://Haruto:FM4dwHBEThulA52N@shop-mean.ofec2.mongodb.
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', "*");
@@ -31,6 +34,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/user', userRoutes)
+app.use('/api/user', userRoutes);
+app.use('/api/admin', adminRoutes);
 
 module.exports = app;

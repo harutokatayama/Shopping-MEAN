@@ -1,20 +1,23 @@
 <mat-toolbar>
     <mat-toolbar-row class="admdin-header">
         <ul class="header-admin">
-            <li>
+            <li *ngIf="adminUserIsAuthenticated">
                 <a mat-button routerLink="/admin/products">Admin Products</a>
             </li>
-            <li>
+            <li *ngIf="adminUserIsAuthenticated">
                 <a mat-button routerLink="/admin/post">Admin Add Products</a>
             </li>
-            <li>
+            <li *ngIf="adminUserIsAuthenticated">
                 <a mat-button routerLink="/admin/users">Admin Users</a>
             </li>
             <span class="spacer"></span>
-            <li>
+            <li *ngIf="!adminUserIsAuthenticated">
                 <a mat-button routerLink="/admin/login">Login</a>
             </li>
-            <li>
+            <li *ngIf="!adminUserIsAuthenticated">
+                <a mat-button routerLink="/admin/signup">Signup</a>
+            </li>
+            <li *ngIf="adminUserIsAuthenticated">
                 <button mat-button (click)="onLogout()">Logout</button>
             </li>
         </ul>

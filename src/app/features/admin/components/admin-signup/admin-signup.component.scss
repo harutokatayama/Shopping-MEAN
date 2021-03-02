@@ -1,0 +1,10 @@
+@import '../../../../common';
+
+.auth-container {
+    @include font-family-times();
+    @include displayFlexCenter();
+    button {
+        @include font-family-times();
+        outline: none;
+    }
+}
