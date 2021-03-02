@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { AdminService } from '../../services/admin.service';
 
 @Component({
@@ -8,9 +9,9 @@ import { AdminService } from '../../services/admin.service';
   templateUrl: './admin-login.component.html',
   styleUrls: ['./admin-login.component.scss']
 })
-export class AdminLoginComponent implements OnInit {
-  isLoadingMode = true;
+export class AdminLoginComponent implements OnInit, OnDestroy {
   isLoading = false;
+  private authStatusSub: Subscription;
 
   constructor(
     private router: Router,
@@ -18,19 +19,24 @@ export class AdminLoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.authStatusSub = this.adminService.getAuthenticatedListener()
+      .subscribe(authStatus => {
+        this.isLoading = false;
+      });
   }
 
-  onSubmit(form: NgForm) {
-    const email = form.value.email;
-    const password = form.value.password;
-
+  onLogin(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
     this.isLoading = true;
 
-    this.adminService.adminLogin(email, password);
-
-    form.reset();
+    this.adminService.adminLogin(form.value.email, form.value.password);
     this.router.navigate(['/admin/products']);
+  }
+
+  ngOnDestroy() {
+    this.authStatusSub.unsubscribe();
   }
 
 }
