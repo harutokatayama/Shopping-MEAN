@@ -1,8 +1,10 @@
 <app-carousel></app-carousel>
 
-<mat-paginator [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]">
+<mat-paginator *ngIf="!isLoading"
+              [length]="totalProducts"
+              [pageSize]="productsPrePage"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="onhangedPage($event)">
 </mat-paginator>
 
 <div class="products-container">
@@ -25,7 +27,9 @@
   </mat-card>
 </div>
 
-<mat-paginator [length]="100"
-            [pageSize]="10"
-            [pageSizeOptions]="[5, 10, 25, 100]">
+<mat-paginator *ngIf="!isLoading"
+              [length]="totalProducts"
+              [pageSize]="productsPrePage"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="onhangedPage($event)">
 </mat-paginator>
