@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product } from 'src/app/features/products/product.model';
 import { AdminProductsService } from '../../services/admin-products.service';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-admin-post-products',
@@ -21,12 +22,13 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
   private authStatusSub: Subscription;
 
   constructor(
+    public adminProductsService: AdminProductsService,
     public route: ActivatedRoute,
-    private adminProductService: AdminProductsService,
+    private adminService: AdminService
   ) { }
 
   ngOnInit(): void {
-    this.authStatusSub = this.adminProductService.getProductUpdateListener().subscribe(
+    this.authStatusSub = this.adminProductsService.getProductUpdateListener().subscribe(
       authStatus => {
         this.isLoading = false;
       }
@@ -48,7 +50,7 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
         this.mode = 'edit';
         this.productId = paramMap.get('productId');
         this.isLoading = true;
-        this.adminProductService.getProduct(this.productId).subscribe(productData => {
+        this.adminProductsService.getProduct(this.productId).subscribe(productData => {
           this.isLoading = false;
           this.product = {
             id: productData._id,
@@ -100,7 +102,7 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
     }
     this.isLoading = true;
     if (this.mode === 'create') {
-      this.adminProductService.addProduct(
+      this.adminProductsService.addProduct(
         this.form.value.title,
         this.form.value.price,
         this.form.value.image,
@@ -113,7 +115,7 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
         this.form.value.width
       );
     } else {
-      this.adminProductService.updateProduct(
+      this.adminProductsService.updateProduct(
         this.productId,
         this.form.value.title,
         this.form.value.price,
