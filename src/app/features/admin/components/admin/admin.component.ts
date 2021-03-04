@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  login = true;
+  
   constructor(private router: Router) { }
 
   ngOnInit() {
