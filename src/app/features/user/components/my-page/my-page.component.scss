@@ -17,13 +17,17 @@
     }
     .detail-container {
         text-align: center;
-        mat-card-content {
-            mat-card-title {
-                @include font-family-times();
-            }
-            mat-card-subtitle {
-                a {
+        mat-card {
+            mat-list {
+                mat-list-item {
                     @include font-family-times();
+                    .spacer {
+                        flex: 1 1 auto;
+                    }
+                    mat-card-subtitle {
+                        position: relative;
+                        top: 5px;
+                    }
                 }
             }
         }

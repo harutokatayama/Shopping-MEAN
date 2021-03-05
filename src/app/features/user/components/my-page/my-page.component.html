@@ -8,25 +8,33 @@
 
     <mat-card-content class="detail-container">
         <mat-card>
-            <mat-card-title>Orders</mat-card-title>
-            <mat-card-subtitle>
-                <a routerLink="/">View All Orders</a>
-            </mat-card-subtitle>
-        </mat-card>
+            <mat-list role="list">
 
-        <mat-card>
-            <mat-card-title>WishLists</mat-card-title>
-            <mat-card-subtitle>
-                <a routerLink="/">View All WishLists</a>
-            </mat-card-subtitle>
-        </mat-card>
+                <mat-list-item role="listitem">
+                    <mat-card-title>Orders</mat-card-title>
+                    <span class="spacer"></span>
+                    <mat-card-subtitle>
+                        <a routerLink="/">View All Orders</a>
+                    </mat-card-subtitle>
+                </mat-list-item>
 
-        <mat-card>
-            <mat-card-title>Reviews</mat-card-title>
-            <mat-card-subtitle>
-                <a routerLink="/">View All Reviews</a>
-            </mat-card-subtitle>
-        </mat-card>
+                <mat-list-item role="listitem">
+                    <mat-card-title>WishLists</mat-card-title>
+                    <span class="spacer"></span>
+                    <mat-card-subtitle>
+                        <a routerLink="/">View All WishLists</a>
+                    </mat-card-subtitle>
+                </mat-list-item>
 
+                <mat-list-item role="listitem">
+                    <mat-card-title>Reviews</mat-card-title>
+                    <span class="spacer"></span>
+                    <mat-card-subtitle>
+                        <a routerLink="/">View All Reviews</a>
+                    </mat-card-subtitle>
+                </mat-list-item>
+
+            </mat-list>
+        </mat-card>
     </mat-card-content>
 </mat-card>

@@ -3,9 +3,12 @@ const uniqueValidator = require('mongoose-unique-validator');
 
 const Schema = mongoose.Schema;
 
+// const Cart = require('./cart');
+
 const userSchema = mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  // Cart
   cart: {
     items: [
       {
