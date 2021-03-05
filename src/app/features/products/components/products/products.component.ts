@@ -3,7 +3,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { Subscription } from 'rxjs';
 
 import { AuthService } from 'src/app/features/auth/services/auth.service';
-import { Product } from '../../product.model';
+import { Product } from '../../models/product.model';
 import { ProductsService } from '../../services/products.service';
 
 @Component({

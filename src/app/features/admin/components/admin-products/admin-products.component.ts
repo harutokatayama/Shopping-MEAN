@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Subscription } from 'rxjs';
 
-import { Product } from 'src/app/features/products/product.model';
+import { Product } from 'src/app/features/products/models/product.model';
 import { AdminProductsService } from '../../services/admin-products.service';
 import { AdminService } from '../../services/admin.service';
 

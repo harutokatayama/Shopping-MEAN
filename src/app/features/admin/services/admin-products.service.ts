@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Subject } from "rxjs";
 import { map } from "rxjs/operators";
-import { Product } from "../../products/product.model";
+import { Product } from "../../products/models/product.model";
 
 @Injectable({
     providedIn: 'root'
