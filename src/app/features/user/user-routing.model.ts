@@ -5,6 +5,7 @@ import { MyPageComponent } from "./components/my-page/my-page.component";
 import { UserInfoComponent } from "./components/user-info/user-info.component";
 import { EnterUserInfoComponent } from "./components/enter-user-info/enter-user-info.component";
 import { UserComponent } from "./components/user/user.component";
+import { CartComponent } from "./components/cart/cart.component";
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
       children: [
           { path: 'my-page', component: MyPageComponent },
           { path: 'info', component: UserInfoComponent },
-          { path: 'enter-info', component: EnterUserInfoComponent }
+          { path: 'enter-info', component: EnterUserInfoComponent },
+          { path: 'cart', component: CartComponent }
       ]
     }
 ];

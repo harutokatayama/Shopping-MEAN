@@ -1,1 +1,148 @@
-<p>cart works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Your Cart
+        </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <mat-card>
+            <div>
+                <span>Your cart is empty.</span>
+                <img src="assets/empty-cart.png" alt="empty-cart-image">
+            </div>
+        </mat-card>
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <div class="cart-image-container">
+                    <img src="assets/whitewolf.jpg" alt="product-image">
+                </div>
+                <div class="cart-detail-col-container">
+                    <div>
+                        <p class="product-name">Product Name</p>
+                        <p class="product-code">Product Code</p>
+                        <button mat-raised-button>Move to Wish List</button>
+                    </div>
+
+                    <div class="cart-product-price">
+                        Price: $18:00
+                    </div>
+
+                    <div class="cart-product-quantity">
+                        Quantity: <input type="text" value="1">
+                    </div>
+
+                    <button class="delete-mat-raised-button" mat-raised-button>Delete</button>
+                </div>
+            </mat-list-item>
+            <hr>
+            <mat-list-item role="listitem">
+                <div class="cart-image-container">
+                    <img src="assets/whitewolf.jpg" alt="product-image">
+                </div>
+                <div class="cart-detail-col-container">
+                    <div>
+                        <p class="product-name">Product Name</p>
+                        <p class="product-code">Product Code</p>
+                        <button mat-raised-button>Move to Wish List</button>
+                    </div>
+
+                    <div class="cart-product-price">
+                        Price: $18:00
+                    </div>
+
+                    <div class="cart-product-quantity">
+                        Quantity: <input type="text" value="1">
+                    </div>
+
+                    <button class="delete-mat-raised-button" mat-raised-button>Delete</button>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+        <button mat-raised-button color="warn">update Cart</button>
+    </mat-card-actions>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title class="order-title">
+            <div>
+                <span>Order Total $0</span>
+            </div>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <div class="checkout-container">
+            <p>xx items in your cart</p>
+            <button mat-raised-button color="warn">Checkout</button>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Your Wishlist Items
+        </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <mat-card>
+            <div>
+                <span>Your wishlist is empty.</span>
+                <img src="assets/watch.png" alt="watch-image">
+            </div>
+        </mat-card>
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <div class="cart-image-container">
+                    <img class="wish-list-image" src="assets/whitewolf.jpg" alt="product-image">
+                </div>
+                <div class="cart-detail-col-container">
+                    <div>
+                        <p class="product-name">Product Name</p>
+                        <p class="product-code">Product Code</p>
+                        <button mat-raised-button>Move to Cart</button>
+                    </div>
+
+                    <div class="cart-product-price">
+                        Price: $18:00
+                    </div>
+
+                    <div class="cart-product-quantity">
+                        Quantity: 1
+                    </div>
+
+                    <button class="delete-mat-raised-button" mat-raised-button>Delete</button>
+                </div>
+            </mat-list-item>
+            <hr>
+            <mat-list-item role="listitem">
+                <div class="cart-image-container">
+                    <img class="wish-list-image" src="assets/whitewolf.jpg" alt="product-image">
+                </div>
+                <div class="cart-detail-col-container">
+                    <div>
+                        <p class="product-name">Product Name</p>
+                        <p class="product-code">Product Code</p>
+                        <button mat-raised-button>Move to Cart</button>
+                    </div>
+
+                    <div class="cart-product-price">
+                        Price: $18:00
+                    </div>
+
+                    <div class="cart-product-quantity">
+                        Quantity: 1
+                    </div>
+
+                    <button class="delete-mat-raised-button" mat-raised-button>Delete</button>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

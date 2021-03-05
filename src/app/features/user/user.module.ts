@@ -9,13 +9,15 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 import { EnterUserInfoComponent } from './components/enter-user-info/enter-user-info.component';
 import { UserComponent } from './components/user/user.component';
 import { AngularMaterialModule } from "src/app/angular-material.module";
+import { CartComponent } from "./components/cart/cart.component";
 
 @NgModule({
     declarations: [
         MyPageComponent,
         UserInfoComponent,
         EnterUserInfoComponent,
-        UserComponent
+        UserComponent,
+        CartComponent
     ],
     imports: [
         RouterModule,

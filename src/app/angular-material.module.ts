@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   exports: [
@@ -27,7 +28,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatCardModule,
     MatPaginatorModule,
     MatMenuModule,
-    MatStepperModule
+    MatStepperModule,
+    MatListModule
   ]
 })
 export class AngularMaterialModule {
