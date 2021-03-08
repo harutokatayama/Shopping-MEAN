@@ -2,13 +2,6 @@
 
 .mat-form-field-container {
   @include displayFlex();
-  .image-preview {
-    height: 5rem;
-    margin: 1rem 0;
-    .image-preview img {
-      height: 100%;
-    }
-  }
 }
 
 mat-form-field {
@@ -24,4 +17,12 @@ textarea {
 
 input[type="file"] {
   visibility: hidden;
+}
+
+.image-preview {
+  height: 5rem;
+  margin: 1rem 0;
+  img {
+    height: 100%;
+  }
 }
