@@ -12,8 +12,7 @@ import { AdminService } from '../../services/admin.service';
   styleUrls: ['./admin-products.component.scss']
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
-  products = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,];
-  // products: Product[] = [];
+  products: Product[] = [];
   productCode = 'ZLFfW5Vh2Y28NQRu';
   isLoading = false;
   totalProducts = 10;
@@ -31,12 +30,13 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   
   ngOnInit(): void {
     this.isLoading = true;
-    // this.adminProductsService.getProducts(this.productsPerPage, this.currentPage);
+    this.adminProductsService.getProducts(this.productsPerPage, this.currentPage);
     this.productsSub = this.adminProductsService.getProductUpdateListener()
       .subscribe((productData: { products: Product[], productCount: number }) => {
         this.isLoading = false;
         this.totalProducts = productData.productCount;
-        // this.products = productData.products;
+        this.products = productData.products;
+        console.log(this.products);
       });
     this.userIsAuthenticated = this.adminService.getIsAuth();
     this.authStatusSub = this.adminService
@@ -63,8 +63,8 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // this.productsSub.unsubscribe();
-    // this.authStatusSub.unsubscribe();
+    this.productsSub.unsubscribe();
+    this.authStatusSub.unsubscribe();
   }
 
 }

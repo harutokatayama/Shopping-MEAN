@@ -46,7 +46,7 @@ export class AdminProductsService {
               })
           )
           .subscribe(transformedProductData => {
-              this.productsUpdated = transformedProductData.products;
+              this.products = transformedProductData.products;
               this.productsUpdated.next({
                   products: [...this.products],
                   productCount: transformedProductData.maxProducts
@@ -103,7 +103,7 @@ export class AdminProductsService {
             postData
           )
           .subscribe(responseData => {
-              this.router.navigate(['/']);
+              this.router.navigate(['/admin/products']);
           });
     };
 

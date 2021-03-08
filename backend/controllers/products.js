@@ -82,7 +82,7 @@ exports.getProducts = (req, res, next) => {
   productQuery
     .then(documents => {
       fetchedProducts = documents;
-      return Product.count();
+      return Product.countDocuments();
     })
     .then(count => {
       res.status(200).json({

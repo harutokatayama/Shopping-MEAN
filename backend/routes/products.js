@@ -7,9 +7,9 @@ const extraFile = require('../middleware/check-file');
 
 const router = express.Router();
 
-router.post('', checkAuth, extraFile, ProductsController.createProduct);
+router.post('', extraFile, ProductsController.createProduct);
 
-router.put('/:id', checkAuth, extraFile, ProductsController.updateProduct);
+router.put('/:id', extraFile, ProductsController.updateProduct);
 
 router.get('', ProductsController.getProducts);
 

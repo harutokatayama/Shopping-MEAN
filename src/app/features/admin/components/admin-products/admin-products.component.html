@@ -10,25 +10,28 @@
     </mat-form-field>
 </form>
 
+<div *ngIf="isLoading" style="text-align: center;">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+
 <mat-paginator *ngIf="!isLoading"
               [length]="totalProducts"
-              [pageSize]="productsPrePage"
+              [pageSize]="productsPerPage"
               [pageSizeOptions]="pageSizeOptions"
-              (page)="onhangedPage($event)">
+              (page)="onChangedPage($event)">
 </mat-paginator>
 
-<mat-spinner *ngIf="isLoading"></mat-spinner>
 <div class="admin-products-container" *ngIf="!isLoading">
     <mat-card class="admin-product-container" *ngFor="let product of products">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>ID: {{ productCode | uppercase}}</mat-card-subtitle>
+            <mat-card-title>{{ product.title }}</mat-card-title>
+            <mat-card-subtitle>ID: {{ product.id | uppercase}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a product">
+        <img mat-card-image [src]="product.imagePath" [alt]="product.title">
         <mat-card-content>
             <p>
-                Something in here!
+                {{ product.description }}
             </p>
         </mat-card-content>
         <mat-card-actions>
@@ -40,7 +43,7 @@
 
 <mat-paginator *ngIf="!isLoading"
               [length]="totalProducts"
-              [pageSize]="productsPrePage"
+              [pageSize]="productsPerPage"
               [pageSizeOptions]="pageSizeOptions"
-              (page)="onhangedPage($event)">
+              (page)="onChangedPage($event)">
 </mat-paginator>
