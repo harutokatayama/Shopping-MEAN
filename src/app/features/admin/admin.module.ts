@@ -4,7 +4,6 @@ import { RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { SharedModule } from "src/app/shared/shared.module";
-import { AdminEditProductsComponent } from "./components/admin-edit-products/admin-edit-products.component";
 import { AdminPostProductsComponent } from "./components/admin-post-products/admin-post-products.component";
 import { AdminProductsComponent } from "./components/admin-products/admin-products.component";
 import { AdminComponent } from "./components/admin/admin.component";
@@ -20,7 +19,6 @@ import { AdminSignupComponent } from './components/admin-signup/admin-signup.com
         AdminComponent,
         AdminProductsComponent,
         AdminPostProductsComponent,
-        AdminEditProductsComponent,
         AdminHeaderComponent,
         AdminLoginComponent,
         AdminUsersComponent,

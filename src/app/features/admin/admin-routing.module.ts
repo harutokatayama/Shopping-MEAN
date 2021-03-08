@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { AdminEditProductsComponent } from "./components/admin-edit-products/admin-edit-products.component";
 import { AdminLoginComponent } from "./components/admin-login/admin-login.component";
 import { AdminPostProductsComponent } from "./components/admin-post-products/admin-post-products.component";
 import { AdminProductsComponent } from "./components/admin-products/admin-products.component";
@@ -16,7 +15,7 @@ const routes: Routes = [
       { path: 'signup', component: AdminSignupComponent },
       { path: 'products', component: AdminProductsComponent },
       { path: 'post', component: AdminPostProductsComponent },
-      { path: 'edit', component: AdminEditProductsComponent },
+      { path: 'edit/:productId', component: AdminPostProductsComponent },
       { path: 'users', component: AdminUsersComponent }
     ]
   }
