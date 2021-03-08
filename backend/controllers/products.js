@@ -51,10 +51,8 @@ exports.updateProduct = (req, res, next) => {
     height: req.body.height,
     width: req.body.weight
   });
-  console.log(product);
   Product.updateOne({ _id: req.params.id, creator: req.userData.userId }, product)
     .then(result => {
-      console.log(result);
       if (result.n > 0) {
         res.status(201).json({
           message: 'Update successful!'
@@ -76,6 +74,7 @@ exports.getProducts = (req, res, next) => {
   const pageSize = +req.query.pagesize;
   const currentPage = +req.query.page;
   const productQuery = Product.find();
+  let fetchedProducts;
   if (pageSize && currentPage) {
     productQuery.skip(pageSize * (currentPage - 1)).limit(pageSize);
   }

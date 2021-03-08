@@ -68,7 +68,7 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
           this.form.setValue({
             title: this.product.title,
             price: this.product.price,
-            imagePath: this.product.imagePath,
+            image: this.product.imagePath,
             description: this.product.description,
             quantity: this.product.quantity,
             weight: this.product.weight,

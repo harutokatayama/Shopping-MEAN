@@ -3,18 +3,18 @@ const express = require('express');
 const ProductsController = require('../controllers/products');
 
 const checkAuth = require('../middleware/check-auth');
-const extraFile = require('../middleware/check-file');
+const extractFile = require('../middleware/check-file');
 
 const router = express.Router();
 
-router.post('', extraFile, ProductsController.createProduct);
+router.post('', extractFile, ProductsController.createProduct);
 
-router.put('/:id', extraFile, ProductsController.updateProduct);
+router.put('/:id', extractFile, ProductsController.updateProduct);
 
 router.get('', ProductsController.getProducts);
 
 router.get('/:id', ProductsController.getProduct);
 
-router.delete('/:id', checkAuth, ProductsController.deleteProduct);
+router.delete('/:id', ProductsController.deleteProduct);
 
 module.exports = router;

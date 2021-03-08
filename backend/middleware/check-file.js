@@ -21,7 +21,11 @@ const storage = multer.diskStorage({
       .split(' ')
       .join('-');
     const ext = MIME_TYPE_MAP[file.mimetype];
-    cb(null, name + '-' + Date.now() + '.' + ext);
+    if (name.includes('.' + ext)) {
+      cb(null, Date.now() + '-' + name);
+    } else {
+      cb(null, name + '-' + Date.now() + '.' + ext);
+    }
   }
 });
 

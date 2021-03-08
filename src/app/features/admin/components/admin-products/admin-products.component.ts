@@ -36,13 +36,12 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
         this.isLoading = false;
         this.totalProducts = productData.productCount;
         this.products = productData.products;
-        console.log(this.products);
       });
     this.userIsAuthenticated = this.adminService.getIsAuth();
     this.authStatusSub = this.adminService
       .getAuthenticatedListener()
-      .subscribe(iaAuthenticated => {
-        this.userIsAuthenticated = this.userIsAuthenticated
+      .subscribe(isAuthenticated => {
+        this.userIsAuthenticated = isAuthenticated;
       });
   }
 
