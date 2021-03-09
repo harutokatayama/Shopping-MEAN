@@ -158,6 +158,6 @@ export class AdminProductsService {
 
     deleteProduct(productId: string) {
         return this.http
-          .delete('http://localhost:3000/api/admin/products/' + productId);
+          .delete('http://localhost:3000/api/products/' + productId);
     };
 }
