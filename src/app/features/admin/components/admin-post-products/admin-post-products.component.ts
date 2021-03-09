@@ -17,7 +17,7 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
   product: Product;
   form: FormGroup;
   imagePreview: string;
-  private mode = 'create';
+  mode = 'create';
   private productId: string;
   private authStatusSub: Subscription;
 

@@ -13,10 +13,9 @@ import { AdminService } from '../../services/admin.service';
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
   products: Product[] = [];
-  productCode = 'ZLFfW5Vh2Y28NQRu';
   isLoading = false;
   totalProducts = 10;
-  productsPerPage = 2;
+  productsPerPage = 10;
   currentPage = 1;
   pageSizeOptions = [1, 2, 5, 10];
   userIsAuthenticated = false;
@@ -49,7 +48,7 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.currentPage = pageData.pageIndex + 1;
     this.productsPerPage = pageData.pageSize;
-    this.adminProductsService.getProducts(this.productsPerPage, this.currentPage)
+    this.adminProductsService.getProducts(this.productsPerPage, this.currentPage);
   }
 
   onDelete(productId: string) {

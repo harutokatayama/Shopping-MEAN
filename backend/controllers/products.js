@@ -92,7 +92,7 @@ exports.getProducts = (req, res, next) => {
     })
     .catch(error => {
       res.status(500).json({
-        message: 'Fetching product failed!'
+        message: 'Fetching products failed!'
       });
     });
 }
