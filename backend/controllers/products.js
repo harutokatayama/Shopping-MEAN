@@ -51,7 +51,8 @@ exports.updateProduct = (req, res, next) => {
     height: req.body.height,
     width: req.body.weight
   });
-  Product.updateOne({ _id: req.params.id, creator: req.userData.userId }, product)
+  console.log(product);
+  Product.updateOne({ _id: req.params.id }, product)
     .then(result => {
       if (result.n > 0) {
         res.status(201).json({
