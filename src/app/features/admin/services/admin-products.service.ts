@@ -148,7 +148,6 @@ export class AdminProductsService {
                 height: +height,
                 width: +width
             };
-            console.log(productData);
         }
         this.http
           .put('http://localhost:3000/api/products/' + id, productData)

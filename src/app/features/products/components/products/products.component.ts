@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   productCode = 'ZLFfW5Vh2Y28NQRu';
   isLoading = false;
   totalProducts = 10;
-  productsPerPage = 2;
+  productsPerPage = 10;
   currentPage = 1;
   pageSizeOptions = [1, 2, 5, 10];
   userIsAuthenticated = false;
