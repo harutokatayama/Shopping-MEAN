@@ -12,9 +12,7 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit, OnDestroy {
-  products = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,];
-  // products: Product[] = [];
-  productCode = 'ZLFfW5Vh2Y28NQRu';
+  products: Product[] = [];
   isLoading = false;
   totalProducts = 10;
   productsPerPage = 10;
@@ -36,7 +34,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
       .subscribe((productData: { products: Product[], productCount: number }) => {
         this.isLoading = false;
         this.totalProducts = productData.productCount;
-        // this.products = productData.products;
+        this.products = productData.products;
       });
     this.userIsAuthenticated = this.authService.getIsAuth();
     this.authStatusSub = this.authService
@@ -46,7 +44,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
       });
   }
 
-  onChangePage(pageData: PageEvent) {
+  onChangedPage(pageData: PageEvent) {
     this.isLoading = true;
     this.currentPage = pageData.pageIndex + 1;
     this.productsPerPage = pageData.pageSize;
