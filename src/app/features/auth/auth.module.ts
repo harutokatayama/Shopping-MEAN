@@ -5,11 +5,12 @@ import { RouterModule } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
 
 import { SharedModule } from "src/app/shared/shared.module";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SignupComponent } from './components/signup/signup.component';
 
 //Angular Material
 import { MatButtonModule } from '@angular/material/button';
+import { AuthRoutingModule } from "./auth-routing.module";
 
 @NgModule({
     declarations: [
@@ -17,14 +18,13 @@ import { MatButtonModule } from '@angular/material/button';
         SignupComponent,
     ],
     imports: [
-        RouterModule.forChild([
-            { path: 'login', component: LoginComponent },
-            { path: 'signup', component: SignupComponent }
-        ]),
+        RouterModule,
+        AuthRoutingModule,
         CommonModule,
         FormsModule,
         SharedModule,
-        MatButtonModule
+        MatButtonModule,
+        ReactiveFormsModule
     ],
 })
 export class AuthModule {
