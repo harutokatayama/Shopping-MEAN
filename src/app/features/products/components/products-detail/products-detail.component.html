@@ -1,5 +1,5 @@
 <div class="admin-products-container">
-    <mat-card class="admin-product-container">
+    <mat-card class="admin-product-container" *ngIf="product">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title>{{ product.title }}</mat-card-title>
@@ -31,7 +31,6 @@
             <a class="back-button" mat-stroked-button routerLink="/">BACK</a>
             <button mat-button color="primary">Add to Cart</button>
             <!-- 何個の商品をカートに入れるか選択するinputをここに記入する? -->
-            <button mat-button color="warn">DELETE</button>
         </mat-card-actions>
     </mat-card>
 </div>

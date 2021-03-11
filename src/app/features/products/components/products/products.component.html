@@ -19,14 +19,10 @@
       <mat-card-content>
           <p>
               {{ product.description }}
-              <br>
-              {{ product.imagePath }}
-              <br>
-              http://localhost:3000/images/afsfa-1613979053083.jpg
           </p>
       </mat-card-content>
       <mat-card-actions>
-          <button mat-stroked-button color="accent" [routerLink]="['/', product.id]">Detail</button>
+          <button mat-stroked-button color="accent" [routerLink]="['/detail', product.id]">Detail</button>
           <button mat-stroked-button color="primary" >Add to Cart</button>
       </mat-card-actions>
   </mat-card>
