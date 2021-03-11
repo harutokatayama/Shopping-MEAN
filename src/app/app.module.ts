@@ -29,10 +29,9 @@ import { NotificationInterceptor } from './core/interceptors/notification-interc
     AngularMaterialModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: NotificationInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AdminAuthInterceptor, multi: true },
-
+    // { provide: HTTP_INTERCEPTORS, useClass: NotificationInterceptor, multi: true },
     // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
