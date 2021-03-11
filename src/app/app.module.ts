@@ -9,8 +9,10 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 import { HeaderComponent } from './core/components/header/header.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { AngularMaterialModule } from './angular-material.module';
-import { SidenavComponent } from './core/components/sidenav/sidenav.component';
-import { AuthInterceptor } from './features/auth/auth-interceptor';
+import { AuthInterceptor } from './core/interceptors/auth-interceptor';
+import { AdminAuthInterceptor } from './core/interceptors/admin-auth-interceptor';
+import { ErrorInterceptor } from './core/interceptors/error-interceptor';
+import { NotificationInterceptor } from './core/interceptors/notification-interceptor';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,6 @@ import { AuthInterceptor } from './features/auth/auth-interceptor';
     HeaderComponent,
     PageNotFoundComponent,
     FooterComponent,
-    SidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,8 +29,12 @@ import { AuthInterceptor } from './features/auth/auth-interceptor';
     AngularMaterialModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: NotificationInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AdminAuthInterceptor, multi: true },
+
+    // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
