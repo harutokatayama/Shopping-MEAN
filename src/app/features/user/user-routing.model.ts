@@ -14,7 +14,7 @@ const routes: Routes = [
           { path: 'my-page', component: MyPageComponent },
           { path: 'info', component: UserInfoComponent },
           { path: 'enter-info', component: EnterUserInfoComponent },
-          { path: 'cart', component: CartComponent }
+          { path: 'cart/:userId', component: CartComponent }
       ]
     }
 ];

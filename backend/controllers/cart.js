@@ -1,6 +1,7 @@
 const Product = require('../models/product');
 
 exports.getCart = (req, res, next) => {
+  console.log(user);
     req.user
       .populate('cart.items.productId')
       .execPopulate()
@@ -21,6 +22,7 @@ exports.getCart = (req, res, next) => {
 }
 
 exports.postCart = (req, res, next) => {
+  console.log(req);
     const prodId = req.body.productId;
     Product.findById(prodId)
       .then(product => {

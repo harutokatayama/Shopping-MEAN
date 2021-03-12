@@ -6,10 +6,10 @@ const checkAuth = require('../middleware/check-auth');
 
 const router = express.Router();
 
-router.get('/cart', checkAuth, cartController);
+router.get('/cart', checkAuth, cartController.getCart);
 
-router.post('/cart', checkAuth, cartController);
+router.post('/cart', checkAuth, cartController.postCart);
 
-router.post('/cart-delete-item', checkAuth, cartController);
+router.post('/cart-delete-item', checkAuth, cartController.postCartDeleteProduct);
 
 module.exports = router;
