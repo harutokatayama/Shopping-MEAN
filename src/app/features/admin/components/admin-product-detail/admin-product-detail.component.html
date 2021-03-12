@@ -33,5 +33,28 @@
             <!-- 何個の商品をカートに入れるか選択するinputをここに記入する? -->
             <button mat-button color="warn">DELETE</button>
         </mat-card-actions>
+
+        <mat-divider></mat-divider>
+
+        <div class="products-container">
+            <mat-card class="product-container" *ngFor="let product of products">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>{{ product.title }}</mat-card-title>
+                    <mat-card-subtitle>{{ product.price | currency: 'USD'}}</mat-card-subtitle>
+                    <mat-card-subtitle>ID: {{ product.id | uppercase}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://localhost:3000/images/スクリーンショット-2020-09-04-22.32.18.png" [alt]="product.title">
+                <mat-card-content>
+                    <p>
+                        {{ product.description }}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-stroked-button color="accent" [routerLink]="['/detail', product.id]">Detail</button>
+                    <button mat-stroked-button color="primary" >Add to Cart</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
     </mat-card>
 </div>
