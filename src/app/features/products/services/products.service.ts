@@ -58,6 +58,42 @@ export class ProductsService {
     getProductUpdatedListener() {
         return this.productsUpdated.asObservable();
     }
+
+    getProductNinCurrentId(id: string) {
+        this.http
+          .get<{ message: string; products: any; maxProducts: number }>(
+              'http://localhost:3000/api/products/nin/' + id
+          )
+          .pipe(
+              map(productData => {
+                  return {
+                      products: productData.products.map(product => {
+                          return {
+                            id: product._id,
+                            title: product.title,
+                            price: product.price,
+                            imagePath: product.imagePath,
+                            description: product.description,
+                            quantity: product.quantity,
+                            weight: product.weight,
+                            category: product.category,
+                            country: product.country,
+                            height: product.height,
+                            width: product.width
+                          };
+                      }),
+                      maxProducts: productData.maxProducts
+                  };
+              })
+          )
+          .subscribe(transformedProductData => {
+              this.products = transformedProductData.products;
+              this.productsUpdated.next({
+                  products: [...this.products], 
+                  productCount: transformedProductData.maxProducts
+              });
+          });
+    }
     
     getProduct(id: string) {
         return this.http.get<{
@@ -73,6 +109,13 @@ export class ProductsService {
             height: number;
             width: number;
         }>('http://localhost:3000/api/products/' + id);
+    }
+
+    addToCart(productId: string, count: number) {
+        console.log(productId);
+        this.http.get<{ 
+            
+         }>('http://localhost:3000/api/cart');
     }
 
 }

@@ -15,6 +15,8 @@ router.get('', ProductsController.getProducts);
 
 router.get('/:id', ProductsController.getProduct);
 
+router.get('/nin/:id', ProductsController.getProductsNinCurrentId);
+
 router.delete('/:id', ProductsController.deleteProduct);
 
 module.exports = router;
