@@ -13,7 +13,6 @@ export class AdminHeaderComponent implements OnInit, OnDestroy {
   private authListenerSub: Subscription;
 
   constructor(
-    private router: Router,
     private adminService: AdminService
   ) { }
 

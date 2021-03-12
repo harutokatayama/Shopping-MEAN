@@ -28,6 +28,15 @@ export class AdminUsersComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  ngOnDestroy() {
+    this.usersSub.unsubscribe();
+    this.authStatusSub.unsubscribe();
+  }
+
+  getUsers() {
     this.isLoading = true;
     this.adminUsersService.getUsers(this.usersPerPage, this.currentPage);
     this.usersSub = this.adminUsersService.getUserUpdateListener()
@@ -58,11 +67,6 @@ export class AdminUsersComponent implements OnInit, OnDestroy {
     }, () => {
       this.isLoading = false;
     });
-  }
-
-  ngOnDestroy() {
-    this.usersSub.unsubscribe();
-    this.authStatusSub.unsubscribe();
   }
 
 }

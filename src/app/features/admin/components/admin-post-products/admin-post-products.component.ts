@@ -33,18 +33,7 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
         this.isLoading = false;
       }
     );
-    this.form = new FormGroup({
-      title: new FormControl(null, { validators: [Validators.required, Validators.minLength(3)] }),
-      price: new FormControl(null, { validators: [Validators.required] }),
-      image: new FormControl(null, { validators: [Validators.required] }),
-      description: new FormControl(null, { validators: [Validators.required] }),
-      quantity: new FormControl(null, { validators: [Validators.required] }),
-      weight: new FormControl(null, { validators: [Validators.required] }),
-      category: new FormControl(null, { validators: [Validators.required] }),
-      country: new FormControl(null, { validators: [Validators.required] }),
-      height: new FormControl(null, { validators: [Validators.required] }),
-      width: new FormControl(null, { validators: [Validators.required] }),
-    });
+    this.setNewFormGroup();
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('productId')) {
         this.mode = 'edit';
@@ -82,6 +71,21 @@ export class AdminPostProductsComponent implements OnInit, OnDestroy {
         this.mode = 'create';
         this.productId = null;
       }
+    });
+  }
+
+  setNewFormGroup() {
+    this.form = new FormGroup({
+      title: new FormControl(null, { validators: [Validators.required, Validators.minLength(3)] }),
+      price: new FormControl(null, { validators: [Validators.required] }),
+      image: new FormControl(null, { validators: [Validators.required] }),
+      description: new FormControl(null, { validators: [Validators.required] }),
+      quantity: new FormControl(null, { validators: [Validators.required] }),
+      weight: new FormControl(null, { validators: [Validators.required] }),
+      category: new FormControl(null, { validators: [Validators.required] }),
+      country: new FormControl(null, { validators: [Validators.required] }),
+      height: new FormControl(null, { validators: [Validators.required] }),
+      width: new FormControl(null, { validators: [Validators.required] }),
     });
   }
 

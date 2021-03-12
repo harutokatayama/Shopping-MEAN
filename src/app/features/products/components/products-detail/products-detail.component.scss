@@ -4,10 +4,9 @@
     @include displayFlexCenter();
     flex-flow: row wrap;
     .admin-product-container {
+        @include marginRightLeft05rem();
         max-width: 800px;
         margin-top: 1rem;
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
         mat-card-header {
             .example-header-image {
                 background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
@@ -21,6 +20,22 @@
             }
             button {
                 outline: none;
+            }
+        }
+        .products-container {
+            @include displayFlexCenter();
+            flex-flow: row wrap;
+            .product-container {
+                @include marginRightLeft05rem();
+                max-width: 300px;
+                margin-top: 1rem;
+                cursor: pointer;
+                mat-card-actions {
+                    @include displayFlexCenter();
+                    button {
+                        outline: none;
+                    }
+                }
             }
         }
     }

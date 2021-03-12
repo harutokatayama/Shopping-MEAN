@@ -19,7 +19,7 @@ const routes: Routes = [
         children: [
           { path: ':productId', component: AdminProductDetailComponent, canActivate: [AdminAuthGuard] },
         ]},
-      { path: 'post', component: AdminPostProductsComponent },
+      { path: 'post', component: AdminPostProductsComponent, canActivate: [AdminAuthGuard] },
       { path: 'edit/:productId', component: AdminPostProductsComponent, canActivate: [AdminAuthGuard] },
       { path: 'users', component: AdminUsersComponent, canActivate: [AdminAuthGuard] }
     ]

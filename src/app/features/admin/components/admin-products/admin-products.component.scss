@@ -8,10 +8,9 @@
     @include displayFlexCenter();
     flex-flow: row wrap;
     .admin-product-container {
+        @include marginRightLeft05rem();
         max-width: 300px;
         margin-top: 1rem;
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
         cursor: pointer;
         mat-card-actions {
             @include displayFlexCenter();

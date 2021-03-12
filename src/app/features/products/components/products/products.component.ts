@@ -28,6 +28,15 @@ export class ProductsComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    this.getProducts();
+  }
+
+  ngOnDestroy() {
+    this.productsSub.unsubscribe();
+    this.authStatusSub.unsubscribe();
+  }
+
+  getProducts() {
     this.isLoading = true;
     this.productsService.getProducts(this.productsPerPage, this.currentPage);
     this.productsSub = this.productsService.getProductUpdatedListener()
@@ -51,9 +60,9 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.productsService.getProducts(this.productsPerPage, this.currentPage);
   }
 
-  ngOnDestroy() {
-    this.productsSub.unsubscribe();
-    this.authStatusSub.unsubscribe();
+  addToCart(productId: string) {
+    const theNumberOfProduct = 1;
+    this.productsService.addToCart(productId, theNumberOfProduct);
   }
 
 }

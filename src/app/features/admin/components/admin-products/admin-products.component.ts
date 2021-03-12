@@ -28,6 +28,10 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   ) { }
   
   ngOnInit(): void {
+    this.getProducts();
+  }
+
+  getProducts() {
     this.isLoading = true;
     this.adminProductsService.getProducts(this.productsPerPage, this.currentPage);
     this.productsSub = this.adminProductsService.getProductUpdateListener()

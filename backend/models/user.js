@@ -25,7 +25,7 @@ const userSchema = mongoose.Schema({
 
 userSchema.plugin(uniqueValidator);
 
-userSchema.methods.addToCart = product => {
+userSchema.methods.addToCart = function(product) {
   console.log(product);
   const cartProductIndex = this.cart.items.findIndex(cp => {
     return cp.productId.toString() === product._id.toString();
@@ -49,7 +49,7 @@ userSchema.methods.addToCart = product => {
   return this.save();
 }
 
-userSchema.methods.removeFromCart = productId => {
+userSchema.methods.removeFromCart = function(productId) {
   console.log(productId);
   const updatedCartItems = this.cart.items.filter(item => {
     return item.productId.toString() !== productId.toString();
@@ -58,7 +58,7 @@ userSchema.methods.removeFromCart = productId => {
   return this.save();
 }
 
-userSchema.methods.clearCart = () => {
+userSchema.methods.clearCart = function() {
   this.cart = { items: [] };
   return this.save();
 }
